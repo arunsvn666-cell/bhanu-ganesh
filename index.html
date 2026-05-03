@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Bhanu Ganesh | Student & Sports Enthusiast</title>
+  <!-- Google Fonts for a modern, clean look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #f9fafc 0%, #eef2f7 100%);
+      color: #1e2a3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* header / hero section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      background: #ffffffdd;
+      backdrop-filter: blur(4px);
+      border-radius: 2.5rem;
+      padding: 2rem 2rem;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content .badge {
+      display: inline-block;
+      background: #2b7a4b20;
+      color: #1f6e43;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.25rem 1rem;
+      border-radius: 40px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.3px;
+      backdrop-filter: blur(2px);
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1F6E43, #3b9e6d);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-content .class-school {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #2c3e50;
+      margin: 0.75rem 0 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content .class-school i {
+      color: #2b7a4b;
+      width: 1.6rem;
+    }
+
+    .hero-content .desc {
+      font-size: 1rem;
+      color: #4a5b6e;
+      max-width: 500px;
+      margin: 1rem 0 0.5rem 0;
+      border-left: 4px solid #2b7a4b;
+      padding-left: 1rem;
+    }
+
+    .hero-avatar {
+      flex: 0.4;
+      min-width: 180px;
+      text-align: center;
+      background: linear-gradient(145deg, #e8f0ea, #ffffff);
+      border-radius: 50%;
+      padding: 0.8rem;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .hero-avatar i {
+      font-size: 8rem;
+      color: #1F6E43;
+      filter: drop-shadow(2px 8px 12px rgba(0,0,0,0.1));
+    }
+
+    .avatar-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: #1F6E43;
+      color: white;
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      margin-top: 0.5rem;
+    }
+
+    /* cards section */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: #2b7a4b;
+      border-radius: 4px;
+    }
+
+    .hobbies-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0 3rem;
+    }
+
+    .hobby-card {
+      background: white;
+      border-radius: 2rem;
+      padding: 1.8rem 1.5rem;
+      flex: 1;
+      min-width: 220px;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.3s;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+      border: 1px solid #f0f2f5;
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 35px -12px rgba(0,0,0,0.15);
+      border-color: #cde3d6;
+    }
+
+    .hobby-icon {
+      font-size: 3.5rem;
+      color: #1F6E43;
+      margin-bottom: 1rem;
+    }
+
+    .hobby-card h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #0f2b1f;
+    }
+
+    .hobby-card p {
+      color: #5c6f87;
+      font-size: 0.95rem;
+    }
+
+    /* school info card */
+    .info-panel {
+      background: white;
+      border-radius: 2rem;
+      padding: 2rem 2rem;
+      margin: 2rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+      border: 1px solid #eef2f0;
+    }
+
+    .school-detail {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .school-detail i {
+      font-size: 2.8rem;
+      color: #2b7a4b;
+    }
+    .school-text h4 {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .school-text p {
+      color: #4b5b6c;
+    }
+
+    .fun-fact {
+      background: #eef6f1;
+      border-radius: 2rem;
+      padding: 0.8rem 1.5rem;
+      font-weight: 500;
+      color: #1e5a3c;
+    }
+    .fun-fact i {
+      margin-right: 8px;
+    }
+
+    /* quote / motivation */
+    .quote-block {
+      background: linear-gradient(120deg, #1f2e2a, #14261f);
+      border-radius: 2rem;
+      padding: 2rem 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      color: white;
+    }
+    .quote-block i {
+      font-size: 2rem;
+      opacity: 0.8;
+      margin-bottom: 0.8rem;
+      display: inline-block;
+    }
+    .quote-block p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      font-style: italic;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      color: #5c6f87;
+      font-size: 0.85rem;
+    }
+
+    /* responsive fine-tune */
+    @media (max-width: 700px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-content .desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-content .class-school {
+        justify-content: center;
+      }
+      .section-title:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .section-title {
+        display: block;
+        text-align: center;
+      }
+      .info-panel {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .quote-block p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Section: Name + basic identity -->
+    <div class="hero">
+      <div class="hero-content">
+        <span class="badge"><i class="fas fa-star-of-life"></i> Young Achiever</span>
+        <h1>Bhanu Ganesh</h1>
+        <div class="class-school">
+          <span><i class="fas fa-graduation-cap"></i> 8th Class</span>
+          <span><i class="fas fa-school"></i> Harvest School, Khammam</span>
+        </div>
+        <div class="desc">
+          <i class="fas fa-quote-left" style="font-size: 0.8rem; margin-right: 5px;"></i> 
+          Active, curious, and passionate about team sports. I believe in energy, sportsmanship, and learning every day.
+        </div>
+      </div>
+      <div class="hero-avatar">
+        <i class="fas fa-child"></i>
+        <div class="avatar-label">⭐ BHANU ⭐</div>
+      </div>
+    </div>
+
+    <!-- Hobbies section (cricket & volleyball) -->
+    <div>
+      <h2 class="section-title">✨ My Hobbies & Passions</h2>
+      <div class="hobbies-grid">
+        <!-- Cricket Card -->
+        <div class="hobby-card">
+          <div class="hobby-icon">
+            <i class="fas fa-baseball-ball"></i>
+          </div>
+          <h3>Cricket 🏏</h3>
+          <p>Batting, bowling, fielding — I love the thrill of every match. Cricket teaches patience, strategy, and teamwork. I practice regularly with my friends in Khammam.</p>
+        </div>
+        <!-- Volleyball Card -->
+        <div class="hobby-card">
+          <div class="hobby-icon">
+            <i class="fas fa-volleyball-ball"></i>
+          </div>
+          <h3>Volleyball 🏐</h3>
+          <p>Powerful serves and quick reflexes! Volleyball is all about coordination and jumping high. I enjoy playing as a setter and spiker in school tournaments.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- School & Location Info + additional interests -->
+    <div class="info-panel">
+      <div class="school-detail">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="school-text">
+          <h4>Harvest School, Khammam</h4>
+          <p>Located in the heart of Khammam, Telangana — a place that nurtures curiosity, sports, and values.</p>
+        </div>
+      </div>
+      <div class="school-detail">
+        <i class="fas fa-futbol"></i>
+        <div class="school-text">
+          <h4>Sports Captain (Junior)</h4>
+          <p>Leading my house in inter-class cricket & volleyball events. Played 2 school annual meets.</p>
+        </div>
+      </div>
+      <div class="fun-fact">
+        <i class="fas fa-trophy"></i>  Best All-Rounder Award 2024
+      </div>
+    </div>
+
+    <!-- Daily Routine / extra curriculum -->
+    <div style="margin: 1rem 0 1rem 0;">
+      <h2 class="section-title">🌟 Beyond the Classroom</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem;">
+        <div style="background: white; border-radius: 1.5rem; padding: 1.2rem 1.5rem; flex:1; min-width: 180px;">
+          <i class="fas fa-sun" style="color: #f4b942; font-size: 1.4rem;"></i>
+          <h4 style="margin: 0.5rem 0 0.2rem;">Morning Practice</h4>
+          <p style="font-size: 0.85rem;">5:30 AM – warm up, running & drills with neighborhood team</p>
+        </div>
+        <div style="background: white; border-radius: 1.5rem; padding: 1.2rem 1.5rem; flex:1; min-width: 180px;">
+          <i class="fas fa-book-open" style="color: #3b82f6; font-size: 1.4rem;"></i>
+          <h4 style="margin: 0.5rem 0 0.2rem;">Studies First</h4>
+          <p style="font-size: 0.85rem;">Balancing academics with sports, scoring well in 8th grade.</p>
+        </div>
+        <div style="background: white; border-radius: 1.5rem; padding: 1.2rem 1.5rem; flex:1; min-width: 180px;">
+          <i class="fas fa-heartbeat" style="color: #1F6E43; font-size: 1.4rem;"></i>
+          <h4 style="margin: 0.5rem 0 0.2rem;">Fitness & Fun</h4>
+          <p style="font-size: 0.85rem;">Evenings reserved for cricket or volleyball with schoolmates.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inspiring Quote that resonates with sports and school life -->
+    <div class="quote-block">
+      <i class="fas fa-quote-right"></i>
+      <p>"It's not whether you get knocked down, it's whether you get up again — on the field or in class, keep moving forward."</p>
+      <div style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">— Bhanu Ganesh, 8th Class, Harvest School</div>
+    </div>
+
+    <!-- My Cricket & Volleyball gallery (icons & achievements) -->
+    <div style="margin: 2rem 0 1rem;">
+      <h2 class="section-title">🏅 Sports Snapshot</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1.8rem; justify-content: center;">
+        <div style="background: #ffffff; padding: 1rem 1.8rem; border-radius: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); display: inline-flex; align-items: center; gap: 10px;">
+          <i class="fas fa-cricket-bat-ball" style="font-size: 1.4rem; color:#1F6E43;"></i>
+          <span><strong>Cricket High Score:</strong> 46 runs (not out) in intra-school match</span>
+        </div>
+        <div style="background: #ffffff; padding: 1rem 1.8rem; border-radius: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); display: inline-flex; align-items: center; gap: 10px;">
+          <i class="fas fa-hand-peace" style="font-size: 1.4rem; color:#d97706;"></i>
+          <span><strong>Volleyball feat:</strong> Winning spike in final match (House Cup 2025)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- My daily mantra & contact / message section (simple message area) -->
+    <div style="background: #fef9e6; border-radius: 2rem; margin: 2rem 0; padding: 1.8rem 2rem; border-left: 6px solid #2b7a4b;">
+      <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: space-between;">
+        <div>
+          <i class="fas fa-envelope-open-text" style="font-size: 1.7rem; color:#1F6E43;"></i>
+          <span style="font-weight: 600; margin-left: 0.5rem;">Get in touch / friends</span>
+          <p style="margin-top: 0.5rem; color:#4b5563;">I’m always happy to share tips on cricket or volleyball — or simply talk about school life at Harvest School Khammam.</p>
+        </div>
+        <div style="background: white; border-radius: 50px; padding: 0.5rem 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+          <i class="fas fa-hashtag"></i> bhanu_ganesh_official (school sportstar)
+        </div>
+      </div>
+      <div style="margin-top: 1.2rem; display: flex; gap: 18px; justify-content: flex-start; flex-wrap: wrap;">
+        <span><i class="fab fa-instagram"></i> @bhanu_cricket8</span>
+        <span><i class="fab fa-whatsapp"></i> +91 99887 12345 (School Sports Group)</span>
+        <span><i class="fas fa-envelope"></i> bhanu@harvestkhammam.edu.in</span>
+      </div>
+    </div>
+
+    <!-- footer with copyright & good vibes -->
+    <footer>
+      <p>© 2025 Bhanu Ganesh — 8th Class, Harvest School Khammam. <i class="fas fa-heart" style="color:#1F6E43;"></i> Play with passion, learn with purpose.</p>
+      <p style="margin-top: 0.5rem; font-size:0.75rem;">📍 Khammam, Telangana, India 🇮🇳 | Cricket • Volleyball • Student Life</p>
+    </footer>
+  </div>
+</body>
+</html>
