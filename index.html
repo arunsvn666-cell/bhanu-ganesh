@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Bhanu Ganesh | Student & Sports Enthusiast</title>
-  <!-- Google Fonts for a modern, clean look -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (free icons) -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -17,20 +17,19 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(145deg, #f9fafc 0%, #eef2f7 100%);
+      background: linear-gradient(145deg, #f8fafc 0%, #eef2f8 100%);
       color: #1e2a3e;
       line-height: 1.5;
       scroll-behavior: smooth;
     }
 
-    /* container */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem 1.5rem;
     }
 
-    /* header / hero section */
+    /* Hero section with photo integration */
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -38,12 +37,13 @@
       align-items: center;
       gap: 2rem;
       margin-bottom: 3rem;
-      background: #ffffffdd;
-      backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(2px);
       border-radius: 2.5rem;
       padding: 2rem 2rem;
       box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.7);
+      transition: all 0.2s;
     }
 
     .hero-content {
@@ -56,17 +56,16 @@
       color: #1f6e43;
       font-weight: 600;
       font-size: 0.85rem;
-      padding: 0.25rem 1rem;
+      padding: 0.3rem 1.2rem;
       border-radius: 40px;
       margin-bottom: 1rem;
       letter-spacing: 0.3px;
-      backdrop-filter: blur(2px);
     }
 
     .hero-content h1 {
       font-size: 3rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #1F6E43, #3b9e6d);
+      background: linear-gradient(135deg, #1F6E43, #3b9e6d, #2c8a5a);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -81,7 +80,7 @@
       margin: 0.75rem 0 0.5rem 0;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
@@ -99,34 +98,63 @@
       padding-left: 1rem;
     }
 
-    .hero-avatar {
+    /* Photo container - where the user can place their own image */
+    .hero-photo {
       flex: 0.4;
-      min-width: 180px;
+      min-width: 200px;
       text-align: center;
-      background: linear-gradient(145deg, #e8f0ea, #ffffff);
-      border-radius: 50%;
-      padding: 0.8rem;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      background: #ffffff;
+      border-radius: 2rem;
+      padding: 1rem;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.12);
+      transition: transform 0.2s ease;
+      border: 1px solid #e2e8f0;
     }
 
-    .hero-avatar i {
-      font-size: 8rem;
-      color: #1F6E43;
-      filter: drop-shadow(2px 8px 12px rgba(0,0,0,0.1));
+    .hero-photo:hover {
+      transform: scale(1.02);
     }
 
-    .avatar-label {
+    .photo-frame {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 1.8rem;
+      overflow: hidden;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05), 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Default placeholder image (icon) will be replaced by user's actual image */
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: all 0.2s;
+    }
+
+    /* If image fails to load, fallback style */
+    .photo-frame .fallback-icon {
+      font-size: 5rem;
+      color: #2b7a4b;
+      opacity: 0.7;
+    }
+
+    .photo-caption {
+      margin-top: 0.8rem;
       font-weight: 600;
-      font-size: 0.9rem;
-      background: #1F6E43;
-      color: white;
+      font-size: 0.85rem;
+      background: #f0fdf4;
       display: inline-block;
-      padding: 0.2rem 1rem;
+      padding: 0.25rem 1rem;
       border-radius: 30px;
-      margin-top: 0.5rem;
+      color: #1f6e43;
     }
 
-    /* cards section */
+    /* Section titles */
     .section-title {
       font-size: 1.8rem;
       font-weight: 700;
@@ -145,6 +173,7 @@
       border-radius: 4px;
     }
 
+    /* Hobbies grid */
     .hobbies-grid {
       display: flex;
       flex-wrap: wrap;
@@ -158,11 +187,11 @@
       border-radius: 2rem;
       padding: 1.8rem 1.5rem;
       flex: 1;
-      min-width: 220px;
+      min-width: 240px;
       text-align: center;
       transition: transform 0.25s ease, box-shadow 0.3s;
       box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
-      border: 1px solid #f0f2f5;
+      border: 1px solid #edf2f7;
     }
 
     .hobby-card:hover {
@@ -184,12 +213,7 @@
       color: #0f2b1f;
     }
 
-    .hobby-card p {
-      color: #5c6f87;
-      font-size: 0.95rem;
-    }
-
-    /* school info card */
+    /* Info panel */
     .info-panel {
       background: white;
       border-radius: 2rem;
@@ -201,52 +225,32 @@
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 12px 28px rgba(0,0,0,0.05);
-      border: 1px solid #eef2f0;
     }
 
     .school-detail {
       display: flex;
-      gap: 1.2rem;
+      gap: 1rem;
       align-items: center;
-      flex-wrap: wrap;
     }
     .school-detail i {
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       color: #2b7a4b;
     }
-    .school-text h4 {
-      font-weight: 700;
-      font-size: 1.2rem;
-    }
-    .school-text p {
-      color: #4b5b6c;
-    }
-
     .fun-fact {
       background: #eef6f1;
       border-radius: 2rem;
-      padding: 0.8rem 1.5rem;
+      padding: 0.6rem 1.5rem;
       font-weight: 500;
-      color: #1e5a3c;
-    }
-    .fun-fact i {
-      margin-right: 8px;
     }
 
-    /* quote / motivation */
+    /* Quote */
     .quote-block {
       background: linear-gradient(120deg, #1f2e2a, #14261f);
       border-radius: 2rem;
-      padding: 2rem 2rem;
+      padding: 2rem;
       text-align: center;
       margin: 2rem 0;
       color: white;
-    }
-    .quote-block i {
-      font-size: 2rem;
-      opacity: 0.8;
-      margin-bottom: 0.8rem;
-      display: inline-block;
     }
     .quote-block p {
       font-size: 1.3rem;
@@ -256,6 +260,17 @@
       margin: 0 auto;
     }
 
+    /* gallery/achievement chips */
+    .achievement-chip {
+      background: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
     /* footer */
     footer {
       text-align: center;
@@ -263,11 +278,10 @@
       padding: 1.5rem 0;
       border-top: 1px solid rgba(0,0,0,0.08);
       color: #5c6f87;
-      font-size: 0.85rem;
     }
 
-    /* responsive fine-tune */
-    @media (max-width: 700px) {
+    /* responsive */
+    @media (max-width: 750px) {
       .hero {
         flex-direction: column-reverse;
         text-align: center;
@@ -294,143 +308,171 @@
       .quote-block p {
         font-size: 1.1rem;
       }
+      .hero-photo {
+        max-width: 260px;
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Hero Section: Name + basic identity -->
-    <div class="hero">
-      <div class="hero-content">
-        <span class="badge"><i class="fas fa-star-of-life"></i> Young Achiever</span>
-        <h1>Bhanu Ganesh</h1>
-        <div class="class-school">
-          <span><i class="fas fa-graduation-cap"></i> 8th Class</span>
-          <span><i class="fas fa-school"></i> Harvest School, Khammam</span>
-        </div>
-        <div class="desc">
-          <i class="fas fa-quote-left" style="font-size: 0.8rem; margin-right: 5px;"></i> 
-          Active, curious, and passionate about team sports. I believe in energy, sportsmanship, and learning every day.
-        </div>
+<div class="container">
+  <!-- Hero section with REAL PHOTO placeholder -->
+  <div class="hero">
+    <div class="hero-content">
+      <span class="badge"><i class="fas fa-crown"></i> Young Sportstar</span>
+      <h1>Bhanu Ganesh</h1>
+      <div class="class-school">
+        <span><i class="fas fa-graduation-cap"></i> 8th Class</span>
+        <span><i class="fas fa-school"></i> Harvest School, Khammam</span>
       </div>
-      <div class="hero-avatar">
-        <i class="fas fa-child"></i>
-        <div class="avatar-label">⭐ BHANU ⭐</div>
+      <div class="desc">
+        <i class="fas fa-quote-left" style="font-size: 0.8rem; margin-right: 6px;"></i> 
+        Passionate cricketer & volleyball player. Representing my school with energy, discipline, and a never-give-up attitude.
       </div>
     </div>
-
-    <!-- Hobbies section (cricket & volleyball) -->
-    <div>
-      <h2 class="section-title">✨ My Hobbies & Passions</h2>
-      <div class="hobbies-grid">
-        <!-- Cricket Card -->
-        <div class="hobby-card">
-          <div class="hobby-icon">
-            <i class="fas fa-baseball-ball"></i>
-          </div>
-          <h3>Cricket 🏏</h3>
-          <p>Batting, bowling, fielding — I love the thrill of every match. Cricket teaches patience, strategy, and teamwork. I practice regularly with my friends in Khammam.</p>
-        </div>
-        <!-- Volleyball Card -->
-        <div class="hobby-card">
-          <div class="hobby-icon">
-            <i class="fas fa-volleyball-ball"></i>
-          </div>
-          <h3>Volleyball 🏐</h3>
-          <p>Powerful serves and quick reflexes! Volleyball is all about coordination and jumping high. I enjoy playing as a setter and spiker in school tournaments.</p>
-        </div>
+    
+    <!-- PHOTO SECTION: Replace the src="..." with your own image URL or local path -->
+    <div class="hero-photo">
+      <div class="photo-frame">
+        <!-- *** IMPORTANT: REPLACE 'your-photo.jpg' WITH YOUR ACTUAL PHOTO PATH/URL *** -->
+        <img id="userPhoto" src="https://placehold.co/400x400/e2f0e6/2b7a4b?text=Bhanu+Ganesh+Photo" alt="Bhanu Ganesh - personal photo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-user-circle fallback-icon\' style=\'font-size:5rem; color:#2b7a4b;\'></i>';">
+      </div>
+      <div class="photo-caption">
+        <i class="fas fa-camera"></i> My recent photo
+      </div>
+      <!-- Instruction note (invisible on print but helpful for user) -->
+      <div style="font-size: 0.7rem; margin-top: 0.5rem; color: #4b6b5c; background: #f8fafc; border-radius: 30px; padding: 0.2rem 0.6rem; display: inline-block;">
+        📸 Your picture here
       </div>
     </div>
-
-    <!-- School & Location Info + additional interests -->
-    <div class="info-panel">
-      <div class="school-detail">
-        <i class="fas fa-map-marker-alt"></i>
-        <div class="school-text">
-          <h4>Harvest School, Khammam</h4>
-          <p>Located in the heart of Khammam, Telangana — a place that nurtures curiosity, sports, and values.</p>
-        </div>
-      </div>
-      <div class="school-detail">
-        <i class="fas fa-futbol"></i>
-        <div class="school-text">
-          <h4>Sports Captain (Junior)</h4>
-          <p>Leading my house in inter-class cricket & volleyball events. Played 2 school annual meets.</p>
-        </div>
-      </div>
-      <div class="fun-fact">
-        <i class="fas fa-trophy"></i>  Best All-Rounder Award 2024
-      </div>
-    </div>
-
-    <!-- Daily Routine / extra curriculum -->
-    <div style="margin: 1rem 0 1rem 0;">
-      <h2 class="section-title">🌟 Beyond the Classroom</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem;">
-        <div style="background: white; border-radius: 1.5rem; padding: 1.2rem 1.5rem; flex:1; min-width: 180px;">
-          <i class="fas fa-sun" style="color: #f4b942; font-size: 1.4rem;"></i>
-          <h4 style="margin: 0.5rem 0 0.2rem;">Morning Practice</h4>
-          <p style="font-size: 0.85rem;">5:30 AM – warm up, running & drills with neighborhood team</p>
-        </div>
-        <div style="background: white; border-radius: 1.5rem; padding: 1.2rem 1.5rem; flex:1; min-width: 180px;">
-          <i class="fas fa-book-open" style="color: #3b82f6; font-size: 1.4rem;"></i>
-          <h4 style="margin: 0.5rem 0 0.2rem;">Studies First</h4>
-          <p style="font-size: 0.85rem;">Balancing academics with sports, scoring well in 8th grade.</p>
-        </div>
-        <div style="background: white; border-radius: 1.5rem; padding: 1.2rem 1.5rem; flex:1; min-width: 180px;">
-          <i class="fas fa-heartbeat" style="color: #1F6E43; font-size: 1.4rem;"></i>
-          <h4 style="margin: 0.5rem 0 0.2rem;">Fitness & Fun</h4>
-          <p style="font-size: 0.85rem;">Evenings reserved for cricket or volleyball with schoolmates.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Inspiring Quote that resonates with sports and school life -->
-    <div class="quote-block">
-      <i class="fas fa-quote-right"></i>
-      <p>"It's not whether you get knocked down, it's whether you get up again — on the field or in class, keep moving forward."</p>
-      <div style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">— Bhanu Ganesh, 8th Class, Harvest School</div>
-    </div>
-
-    <!-- My Cricket & Volleyball gallery (icons & achievements) -->
-    <div style="margin: 2rem 0 1rem;">
-      <h2 class="section-title">🏅 Sports Snapshot</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1.8rem; justify-content: center;">
-        <div style="background: #ffffff; padding: 1rem 1.8rem; border-radius: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); display: inline-flex; align-items: center; gap: 10px;">
-          <i class="fas fa-cricket-bat-ball" style="font-size: 1.4rem; color:#1F6E43;"></i>
-          <span><strong>Cricket High Score:</strong> 46 runs (not out) in intra-school match</span>
-        </div>
-        <div style="background: #ffffff; padding: 1rem 1.8rem; border-radius: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); display: inline-flex; align-items: center; gap: 10px;">
-          <i class="fas fa-hand-peace" style="font-size: 1.4rem; color:#d97706;"></i>
-          <span><strong>Volleyball feat:</strong> Winning spike in final match (House Cup 2025)</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- My daily mantra & contact / message section (simple message area) -->
-    <div style="background: #fef9e6; border-radius: 2rem; margin: 2rem 0; padding: 1.8rem 2rem; border-left: 6px solid #2b7a4b;">
-      <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: space-between;">
-        <div>
-          <i class="fas fa-envelope-open-text" style="font-size: 1.7rem; color:#1F6E43;"></i>
-          <span style="font-weight: 600; margin-left: 0.5rem;">Get in touch / friends</span>
-          <p style="margin-top: 0.5rem; color:#4b5563;">I’m always happy to share tips on cricket or volleyball — or simply talk about school life at Harvest School Khammam.</p>
-        </div>
-        <div style="background: white; border-radius: 50px; padding: 0.5rem 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          <i class="fas fa-hashtag"></i> bhanu_ganesh_official (school sportstar)
-        </div>
-      </div>
-      <div style="margin-top: 1.2rem; display: flex; gap: 18px; justify-content: flex-start; flex-wrap: wrap;">
-        <span><i class="fab fa-instagram"></i> @bhanu_cricket8</span>
-        <span><i class="fab fa-whatsapp"></i> +91 99887 12345 (School Sports Group)</span>
-        <span><i class="fas fa-envelope"></i> bhanu@harvestkhammam.edu.in</span>
-      </div>
-    </div>
-
-    <!-- footer with copyright & good vibes -->
-    <footer>
-      <p>© 2025 Bhanu Ganesh — 8th Class, Harvest School Khammam. <i class="fas fa-heart" style="color:#1F6E43;"></i> Play with passion, learn with purpose.</p>
-      <p style="margin-top: 0.5rem; font-size:0.75rem;">📍 Khammam, Telangana, India 🇮🇳 | Cricket • Volleyball • Student Life</p>
-    </footer>
   </div>
+
+  <!-- HOBBIES SECTION: CRICKET + VOLLEYBALL -->
+  <div>
+    <h2 class="section-title">✨ My Hobbies & Sports</h2>
+    <div class="hobbies-grid">
+      <div class="hobby-card">
+        <div class="hobby-icon"><i class="fas fa-baseball-ball"></i></div>
+        <h3>Cricket 🏏</h3>
+        <p>All-rounder who loves batting and fast bowling. I've played in 5+ school tournaments and never miss a practice session in Khammam grounds.</p>
+      </div>
+      <div class="hobby-card">
+        <div class="hobby-icon"><i class="fas fa-volleyball-ball"></i></div>
+        <h3>Volleyball 🏐</h3>
+        <p>Agility, teamwork, and powerful smashes! As a junior spiker, I help my team coordinate and won 'Best Player' in the last inter-house match.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- School & achievements panel -->
+  <div class="info-panel">
+    <div class="school-detail">
+      <i class="fas fa-map-marker-alt"></i>
+      <div>
+        <h4>Harvest School, Khammam</h4>
+        <p>Khammam, Telangana – A place where academics meet sports excellence.</p>
+      </div>
+    </div>
+    <div class="school-detail">
+      <i class="fas fa-trophy"></i>
+      <div>
+        <h4>Sports Achievements</h4>
+        <p>Cricket: Man of the Match (2 times) | Volleyball: Gold medal - District level</p>
+      </div>
+    </div>
+    <div class="fun-fact">
+      <i class="fas fa-heartbeat"></i> Daily practice: 1 hour cricket / volleyball
+    </div>
+  </div>
+
+  <!-- Routine and Extra info -->
+  <div style="margin: 1rem 0 1rem;">
+    <h2 class="section-title">🌟 Daily Routine</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem;">
+      <div style="background: white; border-radius: 1.5rem; padding: 1rem 1.5rem; flex:1; min-width: 160px;">
+        <i class="fas fa-sun" style="color: #f4b942;"></i>
+        <h4 style="margin: 0.5rem 0;">Morning Drill</h4>
+        <p style="font-size: 0.85rem;">6 AM - Running & cricket/net practice</p>
+      </div>
+      <div style="background: white; border-radius: 1.5rem; padding: 1rem 1.5rem; flex:1;">
+        <i class="fas fa-chalkboard-user"></i>
+        <h4 style="margin: 0.5rem 0;">Focus on Studies</h4>
+        <p style="font-size: 0.85rem;">8th Grade with Maths & Science as favourites</p>
+      </div>
+      <div style="background: white; border-radius: 1.5rem; padding: 1rem 1.5rem; flex:1;">
+        <i class="fas fa-futbol"></i>
+        <h4 style="margin: 0.5rem 0;">Evening Sports</h4>
+        <p style="font-size: 0.85rem;">4:30 PM - Volleyball matches with teammates</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inspirational Quote -->
+  <div class="quote-block">
+    <i class="fas fa-quote-right" style="font-size: 1.8rem;"></i>
+    <p>"Winning is great, but learning from every game and staying humble is what makes a real sportsperson. Play hard, study smart!"</p>
+    <div style="margin-top: 1rem; font-size: 0.9rem;">— Bhanu Ganesh, 8th Class, Harvest School Khammam</div>
+  </div>
+
+  <!-- Sports snapshot -->
+  <div style="margin: 2rem 0 1rem;">
+    <h2 class="section-title">🏅 Sports Highlights</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1.5rem; justify-content: center;">
+      <div class="achievement-chip">
+        <i class="fas fa-cricket-bat-ball" style="color:#1F6E43;"></i> <strong>Cricket:</strong> Top scorer (48 runs) vs. St. Paul's School
+      </div>
+      <div class="achievement-chip">
+        <i class="fas fa-hand-peace" style="color:#d97706;"></i> <strong>Volleyball:</strong> Winning spike in final (Harvest Cup)
+      </div>
+      <div class="achievement-chip">
+        <i class="fas fa-medal"></i> <strong>All-Rounder Award</strong> 2024-25
+      </div>
+    </div>
+  </div>
+
+  <!-- Connect / social (friendly) -->
+  <div style="background: #fef9e6; border-radius: 2rem; margin: 2rem 0; padding: 1.8rem 2rem; border-left: 6px solid #2b7a4b;">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;">
+      <div>
+        <i class="fas fa-users" style="font-size: 1.7rem; color:#1F6E43;"></i>
+        <span style="font-weight: 700; margin-left: 0.5rem;">Let's Connect</span>
+        <p style="margin-top: 0.3rem; color:#4b5563;">Feel free to reach out for cricket/volleyball tips or friendly matches!</p>
+      </div>
+      <div style="background: white; border-radius: 60px; padding: 0.5rem 1.2rem; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+        <i class="fab fa-instagram"></i> @bhanu_harvest8
+      </div>
+    </div>
+    <div style="margin-top: 1.2rem; display: flex; gap: 20px; flex-wrap: wrap;">
+      <span><i class="fab fa-whatsapp"></i> +91 98765 43210 (School sports hub)</span>
+      <span><i class="fas fa-envelope"></i> bhanu.ganesh@harvestkhammam.edu.in</span>
+      <span><i class="fas fa-map-pin"></i> Khammam, Telangana</span>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Bhanu Ganesh — 8th Class, Harvest School Khammam. <i class="fas fa-heart" style="color:#1F6E43;"></i> Play with passion, learn with purpose.</p>
+    <p style="margin-top: 0.3rem;">📍 Khammam, Telangana, India | Cricket • Volleyball • Student Life</p>
+  </footer>
+</div>
+
+<!-- Simple script to let user know how to replace image (this is just a helpful remark, no backend) -->
+<script>
+  (function() {
+    // This script adds a small console log to help user update photo.
+    console.log("✨ BHANU GANESH WEBSITE ✨\nTo add your own photo, replace the 'src' attribute of the image with id 'userPhoto'.\nExample: document.getElementById('userPhoto').src = 'your-image.jpg';");
+    // Also improve fallback if needed - but we already have onerror.
+    const imgElement = document.getElementById('userPhoto');
+    if(imgElement && imgElement.complete) {
+      // if image fails, fallback style is already handled inline.
+    }
+  })();
+</script>
+<!-- HOW TO UPDATE YOUR PHOTO: 
+     Find the <img id="userPhoto"> tag inside .hero-photo .photo-frame.
+     Change src="https://placehold.co/..." to your actual image path like "myphoto.jpg" or "images/bhanu.jpg".
+     You can also replace it with a direct URL (e.g., from Google Drive, Imgur). 
+     For best results, use square or cropped photo (400x400). 
+-->
 </body>
 </html>
